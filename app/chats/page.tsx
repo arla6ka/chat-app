@@ -15,7 +15,7 @@ export default function Chats() {
       return;
     }
 
-    fetch('http://localhost:3001/api/conversations', {
+    fetch('http://https://chat-app-back-red.vercel.app/api/conversations', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
