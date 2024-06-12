@@ -6,7 +6,7 @@ import { Textarea } from './../../components/ui/textarea';
 import { Button } from './../../components/ui/button';
 import { SendIcon } from './../../components/ui/icons';
 
-const socket = io('http://localhost:3001'); // Подключаемся к серверу
+const socket = io('https://chat-app-back-red.vercel.app'); 
 
 export default function Chat() {
   const router = useRouter();
@@ -29,7 +29,7 @@ export default function Chat() {
       socket.emit('join', user._id);
     }
 
-    fetch(`http://localhost:3001/api/conversations/${conversationId}`, {
+    fetch(`https://chat-app-back-red.vercel.app/api/conversations/${conversationId}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
