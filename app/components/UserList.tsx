@@ -15,7 +15,7 @@ export default function UserList() {
   useEffect(() => {
     const token = localStorage.getItem('token');
     const currentUser = JSON.parse(localStorage.getItem('user') || '{}');
-    fetch('http://localhost:3001/api/users', {
+    fetch('https://chat-app-back-red.vercel.app/api/users', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {
@@ -35,7 +35,7 @@ export default function UserList() {
 
   const startChat = async (participantId: string) => {
     const token = localStorage.getItem('token');
-    const res = await fetch('http://localhost:3001/api/conversations', {
+    const res = await fetch('https://chat-app-back-red.vercel.app/api/conversations', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
